@@ -1,15 +1,20 @@
 {
+  "homepage": "https://Divesh9695.github.io/SECURE_WEBSITE-2",
   "name": "secure_website",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+      "predeploy": "npm run build",
+   "deploy": "gh-pages -d build",
+   "start": "react-scripts start",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
+    "gh-pages": "^6.1.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-icons": "^5.2.1",
