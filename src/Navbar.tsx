@@ -1,5 +1,3 @@
-
-
 import "./index.css";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
@@ -31,44 +29,96 @@ const Navbar: React.FC = () => {
           </button>
         </div>
 
-        {/* Navbar Links */}
+        {/* Navbar Links for Desktop */}
+        <div className="hidden md:flex md:space-x-4">
+          <Link to="/" className="block text-black">
+            Home
+          </Link>
+          <Link to="/about" className="block text-black">
+            About Us
+          </Link>
+          <Link to="/services" className="block text-black">
+            Services
+          </Link>
+          <Link to="/employees" className="block text-black">
+            Employees
+          </Link>
+          <Link to="/contact" className="block text-black">
+            Contact
+          </Link>
+          <Link to="/testimonial" className="block text-black">
+            Testimonial
+          </Link>
+          <a
+            href="tel:23456789"
+            className="flex items-center bg-[#447abe] text-white rounded-full p-3"
+          >
+            <IoCall className="mr-2" size={20} />
+            23456789
+          </a>
+        </div>
+
+        {/* Mobile Menu */}
         <div
-          className={`fixed top-0 left-0 w-full h-full bg-white md:bg-transparent flex flex-col items-center justify-center md:justify-start md:flex-row md:space-x-4 md:h-auto md:w-auto md:static transition-transform duration-300 ease-in-out ${
-            isOpen ? "translate-x-0" : "translate-x-full md:translate-x-0"
+          className={`fixed top-0 right-0 w-64 h-full bg-white shadow-lg z-50 transition-transform duration-300 ease-in-out transform ${
+            isOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
           {/* Close Button in Mobile Menu */}
-          {isOpen && (
-            <button
-              onClick={() => setIsOpen(false)}
-              className="absolute top-4 right-4 text-black md:hidden"
-            >
-              <IoClose className="w-6 h-6" />
-            </button>
-          )}
+          <button
+            onClick={() => setIsOpen(false)}
+            className="absolute top-4 right-4 text-black"
+          >
+            <IoClose className="w-6 h-6" />
+          </button>
 
-          <div className="flex flex-col items-center md:flex-row md:space-x-4">
-            <Link to="/" className="block text-black mt-2 md:mt-0">
+          {/* Mobile Navbar Links */}
+          <div className="flex flex-col mt-12 space-y-4 p-4">
+            <Link
+              to="/"
+              onClick={() => setIsOpen(false)}
+              className="block text-black"
+            >
               Home
             </Link>
-            <Link to="/about" className="block text-black mt-2 md:mt-0">
+            <Link
+              to="/about"
+              onClick={() => setIsOpen(false)}
+              className="block text-black"
+            >
               About Us
             </Link>
-            <Link to="/services" className="block text-black mt-2 md:mt-0">
+            <Link
+              to="/services"
+              onClick={() => setIsOpen(false)}
+              className="block text-black"
+            >
               Services
             </Link>
-            <Link to="/employees" className="block text-black mt-2 md:mt-0">
+            <Link
+              to="/employees"
+              onClick={() => setIsOpen(false)}
+              className="block text-black"
+            >
               Employees
             </Link>
-            <Link to="/contact" className="block text-black mt-2 md:mt-0">
+            <Link
+              to="/contact"
+              onClick={() => setIsOpen(false)}
+              className="block text-black"
+            >
               Contact
             </Link>
-            <Link to="/testimonial" className="block text-black mt-2 md:mt-0">
+            <Link
+              to="/testimonial"
+              onClick={() => setIsOpen(false)}
+              className="block text-black"
+            >
               Testimonial
             </Link>
             <a
               href="tel:23456789"
-              className="mt-2 md:mt-0 flex items-center bg-[#447abe] text-white rounded-full p-3"
+              className="flex items-center bg-[#447abe] text-white rounded-full p-3"
             >
               <IoCall className="mr-2" size={20} />
               23456789
@@ -81,7 +131,4 @@ const Navbar: React.FC = () => {
 };
 
 export default Navbar;
-
-
-
 

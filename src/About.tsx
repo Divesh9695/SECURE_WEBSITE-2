@@ -18,7 +18,7 @@ const About: React.FC = () => {
             <br /> armed security services in Virginia. Our highly trained
             professionals are
             <br /> dedicated to ensuring your safety and providing you with
-            peace of mind. <br />
+            peacef of mind. <br />
             Trust the best for your security needs.
           </p>
           <div className="flex justify-center md:justify-start space-x-4 mt-6">
